@@ -1,6 +1,5 @@
 // =============================================================================
 // data_mem.v — Parameterised Byte-Addressable Data Memory
-// Contributor: Soham Sawant
 // =============================================================================
 //
 // This is the data memory (RAM) of the processor. It handles all load and
