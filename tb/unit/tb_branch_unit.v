@@ -2,7 +2,6 @@
 // Testbench   : tb_branch_unit
 // File        : tb/unit/tb_branch_unit.v
 // Tests       : branch_unit.v
-// Contributor : Aparna
 // ============================================================
 
 module tb_branch_unit;
