@@ -1,6 +1,5 @@
 // =============================================================================
 // riscv_top.v — RV32I 5-Stage Pipelined Processor Top-Level
-// Authors  : Anirudh
 // Version  : 0.2
 // Spec ref : rv32i_top_spec.md §4-8
 //
@@ -15,7 +14,31 @@
 
 module riscv_top (
     input  wire        clk,
-    input  wire        rst
+    input  wire        rst,
+
+    // Debug / observation outputs
+    output wire [31:0] debug_pc,
+    output wire [31:0] debug_instr,
+    output wire [31:0] debug_alu_result,
+
+    // Register write-back observation
+    output wire [31:0] debug_wb_data,
+    output wire [4:0]  debug_wb_rd,
+    output wire        debug_wb_valid,
+
+    // Pipeline control observation
+    output wire        debug_stall,
+    output wire        debug_flush,
+    output wire        debug_branch_taken,
+    output wire        debug_halt,
+
+    // Data-memory observation
+    output wire        debug_mem_read,
+    output wire        debug_mem_write,
+    output wire [31:0] debug_mem_addr,
+    output wire [31:0] debug_mem_wdata,
+    output wire [31:0] debug_mem_rdata,
+    output wire        debug_mem_misaligned
 );
 
 // =============================================================================
@@ -445,5 +468,39 @@ module riscv_top (
             $display("[riscv_top] TRAP (ECALL/EBREAK) at PC=0x%08X", ifid_pc);
     end
     // synthesis translate_on
+
+// =============================================================================
+// 12. EXTERNAL DEBUG OUTPUTS
+//
+// These outputs do not change the processor's operation. They expose selected
+// internal signals for simulation, waveform viewing, FPGA debug, or an ILA.
+// Existing testbenches that connect only clk and rst remain compatible when
+// using named port connections.
+// =============================================================================
+
+    // Fetch / execute observation
+    assign debug_pc         = pcF;
+    assign debug_instr      = instrF;
+    assign debug_alu_result = alu_result_E;
+
+    // A valid write-back event excludes writes to x0, because x0 is hardwired
+    // to zero and the register file ignores writes targeting register zero.
+    assign debug_wb_data  = wb_wdata;
+    assign debug_wb_rd    = wb_rd_addr;
+    assign debug_wb_valid = wb_reg_write && (wb_rd_addr != 5'd0);
+
+    // Pipeline control observation
+    assign debug_stall        = stall;
+    assign debug_flush        = flush;
+    assign debug_branch_taken = branch_taken;
+    assign debug_halt         = halt;
+
+    // Memory-stage observation
+    assign debug_mem_read        = exmem_mem_read;
+    assign debug_mem_write       = exmem_mem_write;
+    assign debug_mem_addr        = exmem_alu_result;
+    assign debug_mem_wdata       = exmem_rs2_data;
+    assign debug_mem_rdata       = mem_rdata_ext_M;
+    assign debug_mem_misaligned  = mem_misaligned;
 
 endmodule
