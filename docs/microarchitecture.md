@@ -1,6 +1,6 @@
 # RV32I Microarchitecture Specification
 
-This document details the microarchitecture of the BITSillicon 5-stage pipelined RV32I processor. The processor implements the classic RISC pipeline: **Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write-Back (WB)**.
+This document details the microarchitecture of the 5-stage pipelined RV32I processor. The processor implements the classic RISC pipeline: **Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write-Back (WB)**.
 
 ## 1. Instruction Fetch (IF) Stage
 
