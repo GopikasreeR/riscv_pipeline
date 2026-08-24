@@ -1,4 +1,3 @@
-// Contributor: Soham Sawant 
 //=============================================================================
 // rtl/ex_stage/ex_mem_reg.v
 // EX/MEM Pipeline Register — "The Bridge Between Execute and Memory"
