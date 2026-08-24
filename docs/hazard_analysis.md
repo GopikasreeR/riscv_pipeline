@@ -1,6 +1,6 @@
 # RV32I Hazard Analysis and Resolution
 
-In a pipelined processor, instructions overlap in execution. This overlap can lead to hazards when an instruction depends on the result of a previous instruction that has not yet completed. The BITSillicon RV32I processor successfully resolves data and control hazards to maintain a CPI (Cycles Per Instruction) close to 1.0.
+In a pipelined processor, instructions overlap in execution. This overlap can lead to hazards when an instruction depends on the result of a previous instruction that has not yet completed. The RV32I processor successfully resolves data and control hazards to maintain a CPI (Cycles Per Instruction) close to 1.0.
 
 ## 1. Data Hazards (RAW - Read After Write)
 
