@@ -1,4 +1,4 @@
-# BITSillicon RISC-V — RV32I 5-Stage Pipelined Processor
+# RISC-V — RV32I 5-Stage Pipelined Processor
 
 A classic 5-stage in-order RV32I pipeline (**IF → ID → EX → MEM → WB**) implemented in
 synthesizable Verilog, with full data/control hazard resolution, a self-written
@@ -126,13 +126,3 @@ See [`docs/hazard_analysis.md`](docs/hazard_analysis.md) for the full writeup. I
 - [`docs/microarchitecture.md`](docs/microarchitecture.md) — stage-by-stage design description
 - [`docs/hazard_analysis.md`](docs/hazard_analysis.md) — hazard detection and resolution mechanisms
 - [`docs/interface_spec.md`](docs/interface_spec.md) — signal-level module interface spec
-
-## Status / Roadmap
-
-- [x] RV32I base ISA, 5-stage pipeline, full hazard resolution
-- [x] Unit + integration testbench coverage
-- [x] Self-written assembler
-- [ ] FPGA synthesis + on-board bring-up (Artix-7 target)
-- [ ] CSR / privileged instructions (`ECALL`/`MRET`/machine-mode CSRs)
-- [ ] M-extension (multiply/divide)
-
