@@ -404,22 +404,7 @@ Applies to both `fwd_a_sel` and `fwd_b_sel`:
 
 ---
 
-## 9. Unresolved Decisions (Action Items)
-
-All action items have been officially resolved for the Version 1.0 release:
-
-| # | Issue | Owner | Status |
-|---|-------|-------|----------|
-| 1 | ID/EX Pipeline Register — confirm owner; Anirudh or Vivaan? | Anirudh | Resolved |
-| 2 | MEM/WB Pipeline Register — confirm owner; Anirudh or Soham? | Anirudh | Resolved |
-| 3 | Write-then-read forwarding: in `reg_file` or `hazard_unit`? | Anirudh + Dev | Resolved (`reg_file.v`) |
-| 4 | JAL vs JALR target computation — in `branch_unit` or `id_stage`? | Anirudh + Aadi | Resolved (`branch_unit.v`) |
-| 5 | Memory initialization format: `.hex` file via `$readmemh`? | Krishna + Parhawk | Resolved (using `.hex`) |
-| 6 | Simulation tool: Verilator or Icarus Verilog? | All | Resolved (Icarus Verilog) |
-
----
-
-## 10. File Structure
+## 9. File Structure
 
 ```
 rv32i/
