@@ -1,7 +1,5 @@
 // =============================================================================
 // alu.v — 32-bit RV32I ALU
-// Owners  : Anirudh + Dev
-// Stage   : EX (purely combinational, no clock)
 // Spec ref: rv32i_top_spec.md §6.4 | README §rtl/ex_stage/alu.v
 //
 // Inputs
