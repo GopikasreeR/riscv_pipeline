@@ -1,9 +1,5 @@
 # RV32I 5-Stage Pipelined Processor — Top-Level Architecture Specification
 
-**Version:** 0.1 (Draft)
-**Authors:** Anirudh, Parhawk
-**Status:** For team review before RTL development begins
-
 ---
 
 ## 1. Scope and Purpose
@@ -138,7 +134,7 @@ Latched at the end of the MEM stage.
 
 ## 6. Sub-Module Port Specifications
 
-### 6.1 IF Stage — `if_stage.v` (Owner: Rohan)
+### 6.1 IF Stage — `if_stage.v` 
 
 ```verilog
 module if_stage (
@@ -161,7 +157,7 @@ module if_stage (
 
 ---
 
-### 6.2 Instruction Decoder + Immediate Generator — `id_stage.v` (Owner: Vivaan)
+### 6.2 Instruction Decoder + Immediate Generator — `id_stage.v` 
 
 ```verilog
 module id_stage (
@@ -205,7 +201,7 @@ module id_stage (
 
 ---
 
-### 6.3 Register File — `reg_file.v` (Owner: Abhimanyu)
+### 6.3 Register File — `reg_file.v` 
 
 ```verilog
 module reg_file (
@@ -230,7 +226,7 @@ module reg_file (
 
 ---
 
-### 6.4 ALU — `alu.v` (Owners: Dev + Anirudh)
+### 6.4 ALU — `alu.v` 
 
 ```verilog
 module alu (
@@ -246,7 +242,7 @@ module alu (
 
 ---
 
-### 6.5 Control Unit — `control_unit.v` (Owner: Anirudh)
+### 6.5 Control Unit — `control_unit.v` 
 
 ```verilog
 module control_unit (
@@ -268,7 +264,7 @@ module control_unit (
 
 ---
 
-### 6.6 Branch and Jump Unit — `branch_unit.v` (Owner: Aadi)
+### 6.6 Branch and Jump Unit — `branch_unit.v` 
 
 ```verilog
 module branch_unit (
@@ -289,7 +285,7 @@ module branch_unit (
 
 ---
 
-### 6.7 EX/MEM and MEM Stage — `mem_stage.v` (Owner: Soham)
+### 6.7 EX/MEM and MEM Stage — `mem_stage.v` 
 
 ```verilog
 module mem_stage (
@@ -345,7 +341,7 @@ module hazard_unit (
 
 ---
 
-### 6.9 Verification and Testbench — `tb_rv32i_top.v` (Owners: Krishna + Parhawk)
+### 6.9 Verification and Testbench — `tb_rv32i_top.v` 
 
 No module ports — this is a simulation-only file. It should:
 - Drive `clk` and `rst`
@@ -428,17 +424,17 @@ All action items have been officially resolved for the Version 1.0 release:
 ```
 rv32i/
 ├── rtl/
-│   ├── rv32i_top.v          # Anirudh + Parhawk
-│   ├── if_stage.v           # Rohan
-│   ├── id_stage.v           # Vivaan
-│   ├── control_unit.v       # Anirudh
-│   ├── reg_file.v           # Abhimanyu
-│   ├── alu.v                # Dev + Anirudh
-│   ├── branch_unit.v        # Aadi
-│   ├── mem_stage.v          # Soham
-│   └── hazard_unit.v        # Dev
+│   ├── rv32i_top.v         
+│   ├── if_stage.v           
+│   ├── id_stage.v           
+│   ├── control_unit.v       
+│   ├── reg_file.v           
+│   ├── alu.v                
+│   ├── branch_unit.v        
+│   ├── mem_stage.v          
+│   └── hazard_unit.v        
 ├── tb/
-│   └── tb_rv32i_top.v       # Krishna + Parhawk
+│   └── tb_rv32i_top.v       
 ├── mem/
 │   └── program.hex          # Test program
 └── spec/
@@ -447,4 +443,3 @@ rv32i/
 
 ---
 
-*Raise all interface disagreements as spec change requests before writing RTL. Do not break the port contracts defined in Sections 5 and 6 without team consensus.*
