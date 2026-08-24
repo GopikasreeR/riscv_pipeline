@@ -1,7 +1,5 @@
 // =============================================================================
 // main_decoder.v — Main Control Decoder
-// Owner   : Anirudh
-// Stage   : ID (purely combinational)
 // Spec ref: rv32i_top_spec.md §6.5 | README §rtl/control/
 //
 // Decodes the 7-bit opcode into all datapath control signals.
