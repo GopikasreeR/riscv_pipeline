@@ -1,6 +1,5 @@
 // =============================================================================
 // rtl/mem_stage/mem_wb_reg.v — MEM/WB Pipeline Register
-// Contributor:Soham Sawant
 // =============================================================================
 //
 // This register sits between the MEM and WB stages. It captures:
