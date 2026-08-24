@@ -1,9 +1,6 @@
 // =============================================================================
 // alu_decoder.v — ALU Control Decoder
-// Owner   : Anirudh
-// Stage   : ID (purely combinational)
 // Spec ref: rv32i_top_spec.md §7.1 | README §rtl/control/
-//
 // Combines opcode, funct3, and funct7[5] to produce ALUControl[3:0].
 // ALUControl encoding matches the spec table in rv32i_top_spec.md §7.1:
 //
